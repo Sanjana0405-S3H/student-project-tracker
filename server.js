@@ -1,3 +1,11 @@
+// Put this at the very top of server.js to catch hidden startup crashes
+process.on('uncaughtException', (err) => {
+  console.error('UNCAUGHT EXCEPTION:', err);
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('UNHANDLED REJECTION:', reason);
+});
 // Make sure this is near the top of your server.js (before your routes)
 app.use(express.static('public'));
 import express from 'express';
