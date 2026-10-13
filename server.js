@@ -17,15 +17,19 @@ export default app;
 app.get('/', (req, res) => {
   res.send('Student Project Tracker is live!');
 });
-// Old code at the bottom of your file
+app.use(express.json());
+app.use(express.static('public'));
+
+// Your routes here...
+app.get('/', (req, res) => {
+  res.send('Student Project Tracker is live!');
+});
 const PORT = process.env.PORT || 3000;
 
-// Only call app.listen when running locally, not on Vercel
 if (process.env.NODE_ENV !== 'production') {
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
   });
 }
 
-// Export the app so Vercel's serverless environment can use it
-module.exports = app;
+export default app; // (or module.exports = app if using require)
