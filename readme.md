@@ -1,1 +1,0 @@
-this is a hands-on web app development cloud variant; Vercel + Supabase PostgreSQL; local rehearsal uses npm.cmd ci, a private .env from .env.example, and npm.cmd start; schema.sql creates the table; DATABASE_URL is server-only; the app has shared demo records and no sign-in; the hosted URL will be added after deployment; local SQLite rows are not migrated.
